@@ -1,0 +1,146 @@
+export const translations = {
+  fr: {
+    brandName: 'TracePulse',
+    tagline: 'Radar Anonyme de Follows & Activités',
+    liveScans: 'utilisateurs analysent en direct',
+    navFeatures: 'Fonctionnalités',
+    navHowItWorks: 'Comment ça marche',
+    navPricing: 'Offres & Déblocage',
+    navGenerator: 'Générateur de Tracker',
+    navFaq: 'FAQ',
+    
+    // Hero (matching screenshot 1)
+    heroTitle: 'Traque ses Nouveaux Follows & Followers 🤔',
+    heroSubtitle: "Reçois une alerte dès qu'ils follow quelqu'un de nouveau ou gagnent un abonné. Chaque changement s'affiche dans une timeline avec l'heure où on l'a repéré.",
+    inputPlaceholder: 'ton mec, crush, compte cible...',
+    searchButton: 'Rechercher',
+    tryNowBadge: 'Essaie maintenant. Aucune connexion Instagram requise.',
+    anonymousBadge: '100% Anonyme & Infaillible',
+    quickPicks: 'Suggestions rapides :',
+
+    // Stats (matching screenshot 2)
+    statAccounts: 'Comptes Analysés',
+    statReviews: 'Avis Google Play & App Store',
+    statRating: 'Note Moyenne',
+    statCountries: 'Pays Pris en Charge',
+
+    // How it works (matching screenshot 2)
+    howItWorksEyebrow: 'COMMENT ÇA MARCHE',
+    howItWorksTitle: 'Processus simple, résultats puissants',
+    step1Title: '1. Rentre le pseudonyme',
+    step1Desc: 'Saisis simplement le @username Instagram sans mot de passe ni identifiants requis.',
+    step2Title: '2. Synchronisation furtive',
+    step2Desc: 'Nos serveurs interrogent discrètement les deltas de followers et calculent les nouveaux ajouts.',
+    step3Title: '3. Reçois le rapport & alertes',
+    step3Desc: 'Accède à la timeline chronologique avec horodatages précis et notifications instantanées.',
+
+    // Scanner (matching screenshot 3)
+    scanProgress: 'Progression',
+    scanStep1: 'Connexion aux serveurs Instagram...',
+    scanStep2: 'Recherche du profil...',
+    scanStep3: 'Récupération des données anonymement...',
+    scanStep4: 'Recherche de connexions suggérées...',
+    scanStep5: 'Finalisation & sécurisation des données...',
+    scanTerminalTitle: 'Logs Réseau en direct',
+    skipScanner: 'Accéder directement aux résultats ⚡',
+
+    // Results (matching screenshot 4)
+    resultsTitle: "Qu'en penses-tu ? 🤔",
+    resultsSubtitleFollows: 'nouveaux follows détectés pour',
+    girlsLabel: 'filles',
+    guysLabel: 'mecs',
+    unlockCardTitle: 'Rapport complet verrouillé',
+    bullet1: 'Découvre la vérité en quelques secondes',
+    bullet2: 'Résilie à tout moment, sans aucun engagement',
+    bullet3: 'Reçois une alerte dès qu’ils follow quelqu’un',
+    bullet4: '100% anonyme, zéro trace sur le compte cible',
+    unlockButton: '🔓 Débloquer Maintenant',
+    previewDemoBadge: 'Mode Démo Activé : Visualiser le rapport complet',
+    unlockedDashboardTitle: 'Rapport d\'Activités Débloqué',
+    timelineTab: 'Timeline des Nouveaux Follows',
+    admirersTab: 'Admirateurs Secrets & Ghost',
+    unfollowsTab: 'Comptes Unfollowés',
+    heatmapTab: 'Horaires d\'Activité Nocturne',
+    exportPdf: 'Exporter le Rapport (PDF)',
+    simulateAlert: 'Tester une Alerte Push / SMS',
+    
+    // Website Generator Tool
+    generatorTitle: 'Générateur de Page & Widget Tracker',
+    generatorDesc: 'Crée ta propre page de surveillance personnalisée ou intègre un widget de suivi en direct pour n’importe quel compte.',
+    generateUrlBtn: 'Générer le Lien Privé',
+    embedSnippetBtn: 'Copier le Code Widget (Embed)',
+    copiedToast: 'Copié dans le presse-papiers !',
+  },
+  en: {
+    brandName: 'TracePulse',
+    tagline: 'Anonymous Follows & Activity Radar',
+    liveScans: 'users scanning right now',
+    navFeatures: 'Features',
+    navHowItWorks: 'How it works',
+    navPricing: 'Unlock & Plans',
+    navGenerator: 'Tracker Generator',
+    navFaq: 'FAQ',
+
+    // Hero (matching screenshot 1)
+    heroTitle: 'Track Their New Follows & Followers 🤔',
+    heroSubtitle: 'Get notified the moment they follow someone new or gain a follower. Every change appears in a clean timeline with the exact time detected.',
+    inputPlaceholder: 'their username, partner, target...',
+    searchButton: 'Search',
+    tryNowBadge: 'Try now. No Instagram login required.',
+    anonymousBadge: '100% Anonymous & Undetectable',
+    quickPicks: 'Quick examples:',
+
+    // Stats (matching screenshot 2)
+    statAccounts: 'Accounts Analyzed',
+    statReviews: 'App Store & Google Play Reviews',
+    statRating: 'Average Rating',
+    statCountries: 'Countries Supported',
+
+    // How it works (matching screenshot 2)
+    howItWorksEyebrow: 'HOW IT WORKS',
+    howItWorksTitle: 'Simple process, powerful results',
+    step1Title: '1. Enter username',
+    step1Desc: 'Just type any @username. No Instagram login or password required whatsoever.',
+    step2Title: '2. Stealth Sync',
+    step2Desc: 'Our distributed proxies anonymously index follow lists and calculate real-time mutations.',
+    step3Title: '3. Receive Timeline & Alerts',
+    step3Desc: 'Inspect who was followed down to the minute and set up instant ping notifications.',
+
+    // Scanner (matching screenshot 3)
+    scanProgress: 'Progress',
+    scanStep1: 'Connecting to Instagram servers...',
+    scanStep2: 'Searching user profile...',
+    scanStep3: 'Fetching profile data anonymously...',
+    scanStep4: 'Finding suggested connections...',
+    scanStep5: 'Finalizing & securing data...',
+    scanTerminalTitle: 'Live Network Stream',
+    skipScanner: 'Skip to results ⚡',
+
+    // Results (matching screenshot 4)
+    resultsTitle: 'What do you think? 🤔',
+    resultsSubtitleFollows: 'new follows detected for',
+    girlsLabel: 'girls',
+    guysLabel: 'guys',
+    unlockCardTitle: 'Full Forensic Report Locked',
+    bullet1: 'Discover the truth in seconds',
+    bullet2: 'Cancel anytime, no commitment',
+    bullet3: 'Get notified when they follow someone',
+    bullet4: '100% anonymous, zero trace left',
+    unlockButton: '🔓 Unlock Now',
+    previewDemoBadge: 'Demo Mode: View Full Unlocked Dashboard',
+    unlockedDashboardTitle: 'Unlocked Forensic Activity Report',
+    timelineTab: 'New Follows Timeline',
+    admirersTab: 'Ghost Lurkers & Admirers',
+    unfollowsTab: 'Unfollowed Accounts',
+    heatmapTab: 'Night Activity Peak Hours',
+    exportPdf: 'Export Report (PDF)',
+    simulateAlert: 'Test Push / SMS Alert',
+
+    // Website Generator Tool
+    generatorTitle: 'Tracker Page & Widget Generator',
+    generatorDesc: 'Generate a dedicated tracking dashboard or embeddable live monitoring widget for any profile.',
+    generateUrlBtn: 'Generate Private Tracker Link',
+    embedSnippetBtn: 'Copy Widget Embed Code',
+    copiedToast: 'Copied to clipboard!',
+  },
+};

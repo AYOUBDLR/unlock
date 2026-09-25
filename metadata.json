@@ -1,0 +1,6 @@
+{
+  "name": "TracePulse",
+  "description": "Anonymously track new follows, followers, secret interactions, and timeline activity with instant alerts.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
