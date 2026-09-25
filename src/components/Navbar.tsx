@@ -1,32 +1,23 @@
 import React from 'react';
-import { Activity, Globe, Palette } from 'lucide-react';
+import { Activity, Globe } from 'lucide-react';
 import { ThemeColor, Language } from '../types';
 import { themes } from '../utils/theme';
 import { translations } from '../utils/translations';
 
 interface NavbarProps {
   currentTheme: ThemeColor;
-  setTheme: (theme: ThemeColor) => void;
+  setTheme?: (theme: ThemeColor) => void;
   language: Language;
   setLanguage: (lang: Language) => void;
 }
 
 export const Navbar: React.FC<NavbarProps> = ({
   currentTheme,
-  setTheme,
   language,
   setLanguage,
 }) => {
   const t = translations[language];
   const activeTheme = themes[currentTheme];
-
-  const colorOptions: { id: ThemeColor; label: string; colorClass: string }[] = [
-    { id: 'violet', label: language === 'en' ? 'Electric Violet (Default)' : 'Violet (Défaut)', colorClass: 'bg-violet-500' },
-    { id: 'emerald', label: language === 'en' ? 'Emerald Mint' : 'Emerald Mint', colorClass: 'bg-emerald-500' },
-    { id: 'sapphire', label: language === 'en' ? 'Sapphire Blue' : 'Sapphire Bleu', colorClass: 'bg-blue-500' },
-    { id: 'amber', label: language === 'en' ? 'Sunset Coral' : 'Sunset Corail', colorClass: 'bg-amber-500' },
-    { id: 'slate', label: language === 'en' ? 'Obsidian Noir' : 'Obsidian Noir', colorClass: 'bg-slate-300' },
-  ];
 
   return (
     <header className="sticky top-0 z-40 w-full backdrop-blur-md bg-slate-950/80 border-b border-slate-800/80">
@@ -70,29 +61,8 @@ export const Navbar: React.FC<NavbarProps> = ({
           </a>
         </div>
 
-        {/* Theme and Language Controls */}
+        {/* Language Controls */}
         <div className="flex items-center gap-3">
-          {/* Color Switcher */}
-          <div 
-            className="flex items-center gap-1.5 p-1 bg-slate-900/90 rounded-lg border border-slate-800" 
-            title={language === 'en' ? 'Change color theme' : 'Changer le thème de couleur'}
-          >
-            <Palette className="w-3.5 h-3.5 text-slate-400 ml-1 hidden sm:block" />
-            {colorOptions.map((opt) => (
-              <button
-                key={opt.id}
-                onClick={() => setTheme(opt.id)}
-                title={opt.label}
-                className={`w-5 h-5 rounded-full ${opt.colorClass} transition-transform ${
-                  currentTheme === opt.id
-                    ? 'scale-125 ring-2 ring-white shadow-sm'
-                    : 'opacity-50 hover:opacity-100 hover:scale-110'
-                }`}
-                aria-label={opt.label}
-              />
-            ))}
-          </div>
-
           {/* Language Switcher */}
           <button
             onClick={() => setLanguage(language === 'fr' ? 'en' : 'fr')}

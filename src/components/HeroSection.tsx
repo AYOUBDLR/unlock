@@ -17,13 +17,9 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
   onSearch,
   isLoading,
 }) => {
-  const [username, setUsername] = useState(language === 'en' ? 'my_partner' : 'ton mec');
+  const [username, setUsername] = useState('');
   const t = translations[language];
   const activeTheme = themes[currentTheme];
-
-  const quickPicks = language === 'en' 
-    ? ['my_partner', 'sophie.miller', 'david_fit', 'alex_creatives']
-    : ['ton mec', 'clara_paris', 'lucas_dzn', 'emma.fitness'];
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -148,24 +144,6 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
               )}
             </button>
           </form>
-
-          {/* Quick Examples Selection */}
-          <div className="flex items-center justify-center gap-2 mt-4 text-xs text-slate-400 flex-wrap">
-            <span className="text-slate-500">{t.quickPicks}</span>
-            {quickPicks.map((pick) => (
-              <button
-                key={pick}
-                type="button"
-                onClick={() => {
-                  setUsername(pick);
-                  onSearch(pick);
-                }}
-                className="px-2.5 py-1 rounded-md bg-slate-900/80 hover:bg-slate-800 border border-slate-800 text-slate-300 hover:text-white transition-all cursor-pointer"
-              >
-                @{pick}
-              </button>
-            ))}
-          </div>
 
           {/* Trust Badges (Screenshot 1: "✔ Essaie maintenant. Aucune connexion Instagram requise.") */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-6 text-xs sm:text-sm font-medium text-slate-300">
