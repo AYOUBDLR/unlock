@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Search, Instagram, CheckCircle2, Shield, Sparkles, ArrowRight, X } from 'lucide-react';
 import { ThemeColor, Language } from '../types';
 import { themes } from '../utils/theme';
@@ -18,8 +18,18 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
   isLoading,
 }) => {
   const [username, setUsername] = useState('');
+  const [isMobile, setIsMobile] = useState(false);
   const t = translations[language];
   const activeTheme = themes[currentTheme];
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 640);
+    };
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -82,23 +92,23 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
           {t.heroSubtitle}
         </p>
 
-        {/* Search Input Bar (Screenshot 1) */}
-        <div className="max-w-xl mx-auto">
+        {/* Search Input Bar (Responsive for Mobile & Desktop) */}
+        <div className="max-w-xl mx-auto w-full px-1 sm:px-0">
           <form
             onSubmit={handleSubmit}
-            className={`relative flex items-center p-2 sm:p-2.5 rounded-full bg-white dark:bg-slate-900 border-2 ${activeTheme.pillBorder} shadow-2xl shadow-black/40 transition-all duration-300 focus-within:ring-4 ${activeTheme.glowRing}`}
+            className={`relative flex items-center p-1.5 sm:p-2.5 rounded-full bg-slate-900 border-2 ${activeTheme.pillBorder} shadow-2xl shadow-black/40 transition-all duration-300 focus-within:ring-2 sm:focus-within:ring-4 ${activeTheme.glowRing}`}
           >
             {/* Instagram Camera Logo */}
-            <div className="flex items-center pl-3 pr-2 text-pink-500">
-              <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-amber-500 via-pink-500 to-purple-600 p-[2px] flex items-center justify-center shadow-sm">
-                <div className="w-full h-full bg-white dark:bg-slate-900 rounded-full flex items-center justify-center">
-                  <Instagram className="w-4 h-4 text-pink-500" />
+            <div className="flex items-center pl-1.5 sm:pl-3 pr-1 sm:pr-2 shrink-0">
+              <div className="w-7 h-7 sm:w-8 h-8 rounded-full bg-gradient-to-tr from-amber-500 via-pink-500 to-purple-600 p-[2px] flex items-center justify-center shadow-sm shrink-0">
+                <div className="w-full h-full bg-slate-900 rounded-full flex items-center justify-center">
+                  <Instagram className="w-3.5 h-3.5 sm:w-4 h-4 text-pink-500" />
                 </div>
               </div>
             </div>
 
             {/* @ Prefix */}
-            <span className="text-slate-400 font-bold text-lg select-none pl-1">
+            <span className="text-slate-400 font-bold text-sm sm:text-lg select-none pl-0.5 sm:pl-1 shrink-0">
               @
             </span>
 
@@ -107,8 +117,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
               type="text"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
-              placeholder={t.inputPlaceholder}
-              className="flex-1 bg-transparent px-2 text-base sm:text-lg font-semibold text-slate-900 dark:text-white placeholder:text-slate-400/80 focus:outline-none"
+              placeholder={isMobile ? t.mobilePlaceholder : t.inputPlaceholder}
+              className="min-w-0 flex-1 bg-transparent px-1.5 sm:px-2 text-sm sm:text-base md:text-lg font-semibold text-white placeholder:text-slate-400/80 focus:outline-none"
               autoComplete="off"
               spellCheck="false"
             />
@@ -118,28 +128,28 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
               <button
                 type="button"
                 onClick={() => setUsername('')}
-                className="p-1.5 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 transition-colors mr-1"
+                className="p-1 sm:p-1.5 text-slate-400 hover:text-white transition-colors mr-0.5 sm:mr-1 shrink-0 cursor-pointer"
                 aria-label="Effacer le champ"
               >
-                <X className="w-4 h-4" />
+                <X className="w-3.5 h-3.5 sm:w-4 h-4" />
               </button>
             )}
 
-            {/* Submit Button (Screenshot 1: "Rechercher") */}
+            {/* Submit Button */}
             <button
               type="submit"
               disabled={isLoading || !username.trim()}
-              className={`px-6 sm:px-8 py-3 rounded-full font-bold text-sm sm:text-base tracking-wide transition-all transform active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2 ${activeTheme.searchBtn}`}
+              className={`px-3.5 sm:px-8 py-2.5 sm:py-3 rounded-full font-bold text-xs sm:text-base tracking-wide transition-all transform active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-1.5 sm:gap-2 shrink-0 cursor-pointer ${activeTheme.searchBtn}`}
             >
               {isLoading ? (
-                <div className="flex items-center gap-2">
-                  <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-                  <span>{language === 'fr' ? 'Analyse...' : 'Scanning...'}</span>
+                <div className="flex items-center gap-1.5">
+                  <div className="w-3.5 h-3.5 sm:w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                  <span className="text-xs sm:text-sm">{language === 'fr' ? 'Analyse...' : 'Scanning...'}</span>
                 </div>
               ) : (
                 <>
                   <span>{t.searchButton}</span>
-                  <ArrowRight className="w-4 h-4 hidden sm:inline-block" />
+                  <ArrowRight className="w-3.5 h-3.5 sm:w-4 h-4 hidden sm:inline-block" />
                 </>
               )}
             </button>
