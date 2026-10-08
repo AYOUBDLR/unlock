@@ -22,7 +22,7 @@ export const Footer: React.FC<FooterProps> = ({ currentTheme, language }) => {
               <Activity className={`w-4 h-4 ${activeTheme.accentText}`} />
             </div>
             <div>
-              <span className="font-bold text-white text-base">TracePulse</span>
+              <span className="font-bold text-white text-base">InstaPeek</span>
               <p className="text-[11px] text-slate-500">
                 {language === 'fr' ? 'Technologie d’analyse d’activités publiques' : 'Public activity detection technology'}
               </p>
@@ -42,11 +42,11 @@ export const Footer: React.FC<FooterProps> = ({ currentTheme, language }) => {
         </div>
 
         <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-slate-500 text-[11px]">
-          <p>© 2026 TracePulse Inc. {language === 'fr' ? 'Tous droits réservés.' : 'All rights reserved.'}</p>
+          <p>© 2026 InstaPeek Inc. {language === 'fr' ? 'Tous droits réservés.' : 'All rights reserved.'}</p>
           <p className="max-w-lg text-center sm:text-right">
             {language === 'fr'
-              ? 'Avertissement : TracePulse n’est affilié ni sponsorisé par Meta ou Instagram. Ce service utilise des indexations publiques à des fins d’analyse.'
-              : 'Disclaimer: TracePulse is not affiliated with or endorsed by Meta or Instagram. All metrics are calculated from publicly queryable graphs.'}
+              ? 'Avertissement : InstaPeek n’est affilié ni sponsorisé par Meta ou Instagram. Ce service utilise des indexations publiques à des fins d’analyse.'
+              : 'Disclaimer: InstaPeek is not affiliated with or endorsed by Meta or Instagram. All metrics are calculated from publicly queryable graphs.'}
           </p>
         </div>
       </div>

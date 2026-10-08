@@ -68,7 +68,7 @@ export const AnalysisResults: React.FC<AnalysisResultsProps> = ({
             </div>
             <div>
               <p className="text-sm font-bold">
-                {language === 'fr' ? '🔔 TracePulse Alerte (Simulée)' : '🔔 TracePulse Live Alert (Simulated)'}
+                {language === 'fr' ? '🔔 InstaPeek Alerte (Simulée)' : '🔔 InstaPeek Live Alert (Simulated)'}
               </p>
               <p className="text-xs text-slate-300">
                 {language === 'fr'
