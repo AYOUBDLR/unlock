@@ -1,6 +1,6 @@
 export const translations = {
   fr: {
-    brandName: 'InstaPeek',
+    brandName: 'IGSpyer',
     tagline: 'Radar Anonyme de Follows & Activités',
     liveScans: 'utilisateurs analysent en direct',
     navFeatures: 'Fonctionnalités',
@@ -73,7 +73,7 @@ export const translations = {
     copiedToast: 'Copié dans le presse-papiers !',
   },
   en: {
-    brandName: 'InstaPeek',
+    brandName: 'IGSpyer',
     tagline: 'Anonymous Follows & Activity Radar',
     liveScans: 'users scanning right now',
     navFeatures: 'Features',
